@@ -13,7 +13,9 @@
        const phraseUl = document.querySelector('#phrase ul');
        const phraseArr = this.phrase.split('');
        let html = '';
-
+// go thru each letter of the pharseArr and create and <Li>
+// added the respective class to each item
+// then appended to the dom
        phraseArr.forEach(character => {
           if(character !== ' '){
                html += `<li class="hide letter ${character}">${character}</li>`;
