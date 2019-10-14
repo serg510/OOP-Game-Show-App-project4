@@ -25,7 +25,10 @@
 //step 7
 // const game = new Game();
 // game.getRandomPhrase().addPhraseToDisplay();
-
+//step 8 
+// const game = new Game();
+// game.startGame();
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
 document.getElementById("btn__reset").addEventListener('click', () => {});
 document.getElementById("qwerty").addEventListener('click', () => {});

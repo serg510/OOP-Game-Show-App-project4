@@ -6,7 +6,7 @@
      constructor(){
          this.missed = 0;
          this.phrases = this.createPhrases();
-         this.activePhrase = 'null';
+         this.activePhrase = null;
      }
      /**
     * Creates phrases for use in game
@@ -29,4 +29,18 @@
     getRandomPhrase() {
         return  this.phrases[Math.floor(Math.random() * this.phrases.length )];
     };
+     /**
+     * Begins game by selecting a random phrase and displaying it to user
+     */
+//hides screen overlay
+//calls the getRandomPhrase()
+//add phrase to display by calling addPhraseToDisplay()in (Phrase class)
+//the selected phrase should be stored in the Games activePhrase property
+    startGame(){
+        const overlay = document.getElementById('overlay');
+         overlay.style.display='none';
+        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase.addPhraseToDisplay();
+
+    }
  };
