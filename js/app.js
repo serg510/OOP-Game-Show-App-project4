@@ -30,9 +30,9 @@
 // game.startGame();
 // console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
-const game;
+let game;
 document.getElementById("btn__reset").addEventListener('click', () => {
     game = new Game;
-    game.startGame()
+    game.startGame();
 });
 document.getElementById("qwerty").addEventListener('click', () => {});
