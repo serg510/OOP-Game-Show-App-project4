@@ -13,7 +13,7 @@
     * @return {array} An array of phrases that could be used in the game */
      createPhrases(){
         return [
-            new Phrase("Breathe Through the Pain, It Always Gets Easier with Time"), 
+            new Phrase("Breathe Through the Pain"), 
             new Phrase("Bring Home The Bacon"),
             new Phrase("Bread always falls buttered side down"),
             new Phrase("Better to have loved and lost than never to have loved at all"),
@@ -43,13 +43,31 @@
         this.activePhrase.addPhraseToDisplay();
 
     };
-    handleInteraction(){
+    handleInteraction(){}
+  /**
+ * Checks for winning move
+ * @return {boolean} True if game has been won, false if game wasn't
+won */
+    checkForWin(){
+        const phraseLi = document.querySelectorAll('#phrase > ul > li');
+        let wordsLeft = 0;
+        for(let i=0;i< phraseLi.length; i++){
+            if(phraseLi[i].className !== 'show' && phraseLi[i].className !== 'space'){
+                wordsLeft++;
+            }else {
+                return true;
+            }
+        }
+        
+    };
 
-        // checkForWin(){};
-
-        // removeLife(){};
+/**
+* Displays game over message
+* @param {boolean} gameWon - Whether or not the user won the game
+*/
+gameOver(gameWon) {};
 
         // gameOver(){}
 
-    }
+    
  };

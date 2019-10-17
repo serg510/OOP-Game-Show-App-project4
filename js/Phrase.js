@@ -51,9 +51,9 @@
           if(this.checkLetter(letter) === true){
              for(let i =0; i < phraseLi.length; i++){
                 if(phraseLi[i].textContent === letter ){
-                  phraseLi[i].classList.remove('hide')
+                  phraseLi[i].classList.remove('hide');
                   phraseLi[i].classList.add('show');
-                  ;
+                  
                 }
              }
             
