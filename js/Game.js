@@ -49,17 +49,13 @@
  * @return {boolean} True if game has been won, false if game wasn't
 won */
     checkForWin(){
-        const phraseLi = document.querySelectorAll('#phrase > ul > li');
-        let wordsLeft = 0;
-        for(let i=0;i< phraseLi.length; i++){
-            if(phraseLi[i].className !== 'show' && phraseLi[i].className !== 'space'){
-                wordsLeft++;
-                return false;
-            }else {
-                return true;
-            }
-        }
+        const boardLetters = document.querySelectorAll('.letter');
+        const shownLetters = document.querySelectorAll('.shown');
         
+        if(boardLetters.length === shownLetters.length){
+            //this.gameOver();
+            return true;
+        }
     };
 
 /**
@@ -68,7 +64,7 @@ won */
 */
     gameOver(gameWon) {
         let overlay = document.getElementById('overlay');
-        
+
     };
         
 

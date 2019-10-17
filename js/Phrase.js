@@ -13,7 +13,7 @@
        const phraseUl = document.querySelector('#phrase ul');
        const phraseArr = this.phrase.split('');
        let html = '';
-// go thru each letter of the pharseArr and create and <Li>
+// go thru each letter of the phraseArr and create and <Li>
 // added the respective class to each item
 // then appended to the dom
        phraseArr.forEach(character => {
