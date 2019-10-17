@@ -54,6 +54,7 @@ won */
         for(let i=0;i< phraseLi.length; i++){
             if(phraseLi[i].className !== 'show' && phraseLi[i].className !== 'space'){
                 wordsLeft++;
+                return false;
             }else {
                 return true;
             }
@@ -65,7 +66,11 @@ won */
 * Displays game over message
 * @param {boolean} gameWon - Whether or not the user won the game
 */
-gameOver(gameWon) {};
+    gameOver(gameWon) {
+        let overlay = document.getElementById('overlay');
+        
+    };
+        
 
         // gameOver(){}
 
