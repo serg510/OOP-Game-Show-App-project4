@@ -16,9 +16,9 @@
             new Phrase("Breathe Through the Pain"), 
             new Phrase("Bring Home The Bacon"),
             new Phrase("Bread always falls buttered side down"),
-            new Phrase("Better to have loved and lost than never to have loved at all"),
+            new Phrase("Lo que sera sera"),
             new Phrase("Absolute power corrupts absolutely"),
-            new Phrase("There is no trying only doing")
+            new Phrase("There is no trying")
           ]
      }
         /**
@@ -48,15 +48,46 @@
  * Checks for winning move
  * @return {boolean} True if game has been won, false if game wasn't
 won */
+//turn letters to show
+// document.querySelectorAll('.letter').forEach(i => i.classList.add('show'));
+// game.checkForWin();
+
+//select and save to a var the letters in the phase
     checkForWin(){
-        const boardLetters = document.querySelectorAll('.letter');
-        const shownLetters = document.querySelectorAll('.shown');
-        
-        if(boardLetters.length === shownLetters.length){
-            //this.gameOver();
+        //select and save to a var the letters in the phase
+        const boardLetters = document.querySelectorAll('.letter').length;
+        //select and save to a var the letters that are shown
+        const shownLetters = document.querySelectorAll('.show').length;
+        //compare them to see if the whole phrase is readable
+        if(boardLetters === shownLetters){
+            this.gameOver();
             return true;
+        } else {
+            return false
         }
     };
+
+    /**
+ * Increases the value of the missed property
+ * Removes a life from the scoreboard
+ * Checks if player has remaining lives and ends game if player is out
+ */
+removeLife(){
+    this.missed= 0;
+    const scoreboard = document.querySelectorAll('.tries img');
+    for(let heart of scoreboard){
+        if(heart.getAttribute('src') === 'images/liveHeart.png'){
+           heart.src = 'images/lostHeart.png';
+           return;
+           
+        }
+        this.missed +=1;
+        
+    }
+    if(this.missed === 5 ){
+        this.gameOver();
+    }
+};
 
 /**
 * Displays game over message
@@ -68,7 +99,7 @@ won */
     };
         
 
-        // gameOver(){}
+        
 
     
  };
