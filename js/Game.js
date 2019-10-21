@@ -60,10 +60,10 @@ won */
         const shownLetters = document.querySelectorAll('.show').length;
         //compare them to see if the whole phrase is readable
         if(boardLetters === shownLetters){
-            this.gameOver();
-            return true;
+            
+            return this.gameOver(true);
         } else {
-            return false
+            return false;
         }
     };
 
@@ -85,7 +85,7 @@ removeLife(){
         
     }
     if(this.missed === 5 ){
-        this.gameOver();
+        return this.gameOver(false);
     }
 };
 
@@ -95,7 +95,20 @@ removeLife(){
 */
     gameOver(gameWon) {
         let overlay = document.getElementById('overlay');
+        let final = document.getElementById("game-over-message");
 
+        if(gameWon){
+            overlay.style.display = 'flex';
+            overlay.classList.add('win');
+            final.textContent ='You Win, Great Job!';
+            //console.log('you won');
+        }else if (!gameWon){
+            overlay.style.display ='flex';
+            overlay.classList.add('lose');
+            final.textContent ='You lose, Better Luck Next Time';
+            //console.log('you lost');
+        }
+        
     };
         
 
