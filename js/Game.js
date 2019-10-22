@@ -43,7 +43,7 @@
         this.activePhrase.addPhraseToDisplay();
 
     };
-    handleInteraction(){}
+    
   /**
  * Checks for winning move
  * @return {boolean} True if game has been won, false if game wasn't
@@ -81,35 +81,50 @@ removeLife(){
            return;
            
         }
-        this.missed +=1;
+        this.missed ++;
         
     }
     if(this.missed === 5 ){
         return this.gameOver(false);
     }
 };
-
+//step 9
 /**
 * Displays game over message
 * @param {boolean} gameWon - Whether or not the user won the game
 */
     gameOver(gameWon) {
         let overlay = document.getElementById('overlay');
-        let final = document.getElementById("game-over-message");
+        let finalMessage = document.getElementById("game-over-message");
 
         if(gameWon){
             overlay.style.display = 'flex';
+            overlay.classList.remove('lose')
             overlay.classList.add('win');
-            final.textContent ='You Win, Great Job!';
+            finalMessage.textContent ='You Win, Great Job!';
             //console.log('you won');
         }else if (!gameWon){
             overlay.style.display ='flex';
             overlay.classList.add('lose');
-            final.textContent ='You lose, Better Luck Next Time';
+            finalMessage.textContent ='You lose, Better Luck Next Time';
             //console.log('you lost');
         }
         
     };
+    //step 10
+    /**
+     * Handles onscreen keyboard button clicks
+     * @param (HTMLButtonElement) button - The clicked button element
+     */
+    handleInteraction(){
+        let letter = event.target.textContent;
+         
+        
+        console.log(letter)
+
+
+
+    }
         
 
         

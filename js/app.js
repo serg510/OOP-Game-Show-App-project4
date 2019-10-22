@@ -35,4 +35,6 @@ document.getElementById("btn__reset").addEventListener('click', () => {
     game = new Game;
     game.startGame();
 });
-document.getElementById("qwerty").addEventListener('click', () => {});
+document.getElementById("qwerty").addEventListener('click', () => {
+    game.handleInteraction();
+});
