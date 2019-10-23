@@ -116,18 +116,21 @@ removeLife(){
      * Handles onscreen keyboard button clicks
      * @param (HTMLButtonElement) button - The clicked button element
      */
-    handleInteraction(){
-        let letter = event.target.textContent;
-         
+    handleInteraction(button){
+        //get letter and check if its on the active phrase 
+        // show the letter if true else remove a life
+        //let letter = event.target.textContent;
+        //let letter = this.activePhrase.checkLetter(event).match;
+        //button.disabled = true;
+        //let matchedLetter = this.activePhrase.checkLetter(event).textContent;
+        let matchedLetter = this.activePhrase.checkLetter(button.textContent)
+        if(matchedLetter){
+            console.log('hello');
+        }
+
         
-        console.log(letter)
-
-
-
+        
     }
         
-
-        
-
     
  };
