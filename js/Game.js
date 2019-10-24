@@ -122,7 +122,9 @@ removeLife(){
         //let letter = event.target.textContent;
         let matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
         if(matchedLetter){
-            console.log('hello');
+            this.activePhrase.showMatchedLetter(event.target.textContent);
+        }else if(!matchedLetter){
+            
         }
 
         
