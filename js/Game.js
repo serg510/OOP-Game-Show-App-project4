@@ -123,16 +123,18 @@ removeLife(){
         
         let matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
         //matchedLetter.setAttribute('disabled', true);
-        if(matchedLetter){
-            this.activePhrase.showMatchedLetter(event.target.textContent);
-            
-        }else if(!matchedLetter){
-            this.classList.add('wrong');
-            this.removeLife();
-            
-        }
+            if(matchedLetter){
+                this.activePhrase.showMatchedLetter(event.target.textContent);
+                this.checkForWin();
 
-        
+                
+            }else if(!matchedLetter){
+                
+                this.removeLife();
+                //this.classList.add('wrong');
+            }
+
+            
         
     }
         
