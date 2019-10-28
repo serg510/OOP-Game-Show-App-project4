@@ -132,6 +132,7 @@ removeLife(){
                 
                 this.removeLife();
                 //this.classList.add('wrong');
+                this.className ='wrong';
             }
 
             
