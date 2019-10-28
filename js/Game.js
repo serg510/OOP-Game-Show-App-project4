@@ -119,11 +119,16 @@ removeLife(){
     handleInteraction(){
         //get letter and check if its on the active phrase 
         // show the letter if true else remove a life
-        //let letter = event.target.textContent;
+        //let button = event.target.textContent;
+        
         let matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
+        //matchedLetter.setAttribute('disabled', true);
         if(matchedLetter){
             this.activePhrase.showMatchedLetter(event.target.textContent);
+            
         }else if(!matchedLetter){
+            this.classList.add('wrong');
+            this.removeLife();
             
         }
 
