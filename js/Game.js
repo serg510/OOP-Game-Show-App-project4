@@ -120,7 +120,7 @@ removeLife(){
         //get letter and check if its on the active phrase 
         // show the letter if true else remove a life
         //let button = event.target.textContent;
-        
+        const button = document.querySelectorAll('#qwerty > button > key');
         const matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
         //matchedLetter.setAttribute('disabled', true);
             if(matchedLetter){
@@ -132,7 +132,9 @@ removeLife(){
                 
                 this.removeLife();
                 //this.classList.add('wrong');
-                this.className ='wrong';
+                //button.className ='wrong';
+                //button.classList.add('wrong');
+                
             }
 
             
