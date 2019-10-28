@@ -121,12 +121,12 @@ removeLife(){
         // show the letter if true else remove a life
         //let button = event.target.textContent;
         
-        let matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
+        const matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
         //matchedLetter.setAttribute('disabled', true);
             if(matchedLetter){
                 this.activePhrase.showMatchedLetter(event.target.textContent);
                 this.checkForWin();
-
+                
                 
             }else if(!matchedLetter){
                 
