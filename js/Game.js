@@ -119,26 +119,23 @@ removeLife(){
     handleInteraction(){
         //get letter and check if its on the active phrase 
         // show the letter if true else remove a life
-        //let button = event.target.textContent;
-        const button = document.querySelectorAll('#qwerty > button > key');
-        const matchedLetter = this.activePhrase.checkLetter(event.target.textContent)
-        //matchedLetter.setAttribute('disabled', true);
-            if(matchedLetter){
+         const matchedLetter = this.activePhrase.checkLetter(event.target.textContent);
+        
+        if(matchedLetter){
                 this.activePhrase.showMatchedLetter(event.target.textContent);
+                event.target.classList.add('chosen');
+                event.target.disabled = 'true';
                 this.checkForWin();
                 
+              }else if(!matchedLetter){
                 
-            }else if(!matchedLetter){
-                
-                this.removeLife();
-                //this.classList.add('wrong');
-                //button.className ='wrong';
-                //button.classList.add('wrong');
-                
+                    if(event.target.className === 'key'){
+                        this.removeLife();
+                        event.target.disabled = 'true';
+                        event.target.classList.add('wrong');
+                    }
             }
 
-            
-        
     }
         
     
