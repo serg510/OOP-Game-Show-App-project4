@@ -109,6 +109,7 @@ removeLife(){
             finalMessage.textContent ='You lose, Better Luck Next Time';
             //console.log('you lost');
         }
+        game.reset();
         
     };
     //step 10
@@ -137,6 +138,30 @@ removeLife(){
             }
 
     }
+
+//     Remove all `li` elements from the Phrase `ul` element.
+//      Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
+//      and not use the `chosen` or `wrong` CSS classes.
+//      Reset all of the heart images (i.e. the player's lives) in the scoreboard at the bottom of
+//      the gameboard to display the `liveHeart.png` image.
         
-    
+        reset(){
+            //reset li
+            const li = document.querySelectorAll('#phrase li');
+            li.forEach( li => {
+                li.remove()})
+            //reset chosen & wrong
+            const keys = document.querySelectorAll('#qwerty button');
+            keys.forEach(key => {
+                key.removeAttribute('disabled');
+                key.className = 'key';
+                });
+            //reset lives 
+            const lives = document.querySelectorAll('.tries img');
+                lives.forEach( life => {
+                    life.setAttribute('src','images/liveHeart.png');
+                })
+                
+        }
+
  };
