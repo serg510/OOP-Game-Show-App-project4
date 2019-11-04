@@ -38,3 +38,26 @@ document.getElementById("btn__reset").addEventListener('click', () => {
 document.getElementById("qwerty").addEventListener('click', () => {
     game.handleInteraction();
 });
+
+document.querySelector("button").addEventListener('keyup', (e) => {
+    let matchedLetter = game.activePhrase.checkLetter(event.key);
+    let showLetter = game.activePhrase.showMatchedLetter(event.key)
+    //game.handleInteraction(showLetter);
+    console.log(matchedLetter);
+    
+    if(matchedLetter){
+        game.handleInteraction(true);
+        event.target.classList.add('chosen');
+        event.target.disabled = 'true';
+        game.checkForWin();
+    }else if (!matchedLetter){
+            game.handleInteraction(false);
+        
+            event.target.disabled = 'true';
+            event.target.classList.add('wrong');
+            game.removeLife();
+            
+        
+    }
+    
+});

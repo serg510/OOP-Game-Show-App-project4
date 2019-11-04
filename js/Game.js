@@ -18,7 +18,7 @@
             new Phrase("Bread always falls buttered side down"),
             new Phrase("Lo que sera sera"),
             new Phrase("Absolute power corrupts absolutely"),
-            new Phrase("There is no trying")
+            new Phrase("Say hello to my little friend")
           ]
      }
         /**
@@ -73,15 +73,16 @@ won */
  * Checks if player has remaining lives and ends game if player is out
  */
 removeLife(){
-    this.missed= 0;
+    
     const scoreboard = document.querySelectorAll('.tries img');
     for(let heart of scoreboard){
         if(heart.getAttribute('src') === 'images/liveHeart.png'){
            heart.src = 'images/lostHeart.png';
-           return;
+           this.missed ++;
+           break;
            
         }
-        this.missed ++;
+        
         
     }
     if(this.missed === 5 ){
@@ -119,7 +120,7 @@ removeLife(){
      */
     handleInteraction(){
         //get letter and check if its on the active phrase 
-        // show the letter if true else remove a life
+        
          const matchedLetter = this.activePhrase.checkLetter(event.target.textContent);
         
         if(matchedLetter){
@@ -127,13 +128,14 @@ removeLife(){
                 event.target.classList.add('chosen');
                 event.target.disabled = 'true';
                 this.checkForWin();
-                
+        // show the letter if true else remove a life     
               }else if(!matchedLetter){
                 
                     if(event.target.className === 'key'){
-                        this.removeLife();
                         event.target.disabled = 'true';
                         event.target.classList.add('wrong');
+                        this.removeLife();
+                        
                     }
             }
 
@@ -150,7 +152,7 @@ removeLife(){
             const li = document.querySelectorAll('#phrase li');
             li.forEach( li => {
                 li.remove()})
-            //reset chosen & wrong
+            //reset chosen & wrong class
             const keys = document.querySelectorAll('#qwerty button');
             keys.forEach(key => {
                 key.removeAttribute('disabled');
