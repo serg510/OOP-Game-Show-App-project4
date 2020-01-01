@@ -129,15 +129,15 @@ removeLife(){
                 event.target.disabled = 'true';
                 this.checkForWin();
         // show the letter if true else remove a life     
-              }else if(!matchedLetter){
-                
-                    if(event.target.className === 'key'){
-                        event.target.disabled = 'true';
-                        event.target.classList.add('wrong');
-                        this.removeLife();
-                        
-                    }
-            }
+              }
+        else if(!matchedLetter){
+            if(event.target.className === 'key'){
+            event.target.disabled = 'true';
+            event.target.classList.add('wrong');
+            this.removeLife();
+            
+        }
+    }
 
     }
 
