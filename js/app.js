@@ -52,7 +52,6 @@ document.querySelector("button").addEventListener('keyup', (e) => {
         game.checkForWin();
     }else if (!matchedLetter){
         game.handleInteraction(false);
-    
         event.target.disabled = 'true';
         event.target.classList.add('wrong');
         game.removeLife();
